@@ -15,7 +15,7 @@ type Record struct {
 }
 
 func main() {
-	if os.Args[1] == "rm" || os.Args[1] == "remove" {
+	if len(os.Args) == 2 && (os.Args[1] == "rm" || os.Args[1] == "remove") {
 		err := os.Remove(recordFile)
 		if err != nil {
 			panic(err)
